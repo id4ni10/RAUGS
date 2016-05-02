@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RAUGS", "RAUGS\RAUGS.csproj", "{9513E2A1-2EEA-443E-8BB7-558778840D8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DsAdmin", "DsAdmin\DsAdmin.csproj", "{67A9503E-AB40-4E55-B588-64D9B71CFA40}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9513E2A1-2EEA-443E-8BB7-558778840D8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9513E2A1-2EEA-443E-8BB7-558778840D8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9513E2A1-2EEA-443E-8BB7-558778840D8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9513E2A1-2EEA-443E-8BB7-558778840D8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67A9503E-AB40-4E55-B588-64D9B71CFA40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67A9503E-AB40-4E55-B588-64D9B71CFA40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67A9503E-AB40-4E55-B588-64D9B71CFA40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67A9503E-AB40-4E55-B588-64D9B71CFA40}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

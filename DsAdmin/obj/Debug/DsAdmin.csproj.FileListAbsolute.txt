@@ -1,0 +1,5 @@
+E:\Projeto\RAUGS\DsAdmin\obj\Debug\DsAdmin.csprojResolveAssemblyReference.cache
+E:\Projeto\RAUGS\DsAdmin\bin\Debug\DsAdmin.dll
+E:\Projeto\RAUGS\DsAdmin\bin\Debug\DsAdmin.pdb
+E:\Projeto\RAUGS\DsAdmin\obj\Debug\DsAdmin.dll
+E:\Projeto\RAUGS\DsAdmin\obj\Debug\DsAdmin.pdb
