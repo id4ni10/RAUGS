@@ -51,7 +51,8 @@ namespace RAUGS.Controllers
                                Estado = contato["des_estado_con"].ToString(),
                                Inscricao_Estadual = contato["des_inscricao_estadual_con"].ToString(),
                                Telefone_Comercial = contato["des_telefone_comercial_con"].ToString(),
-                               Telefone_Residencial = contato["des_telefone_residencial_con"].ToString()
+                               Telefone_Residencial = contato["des_telefone_residencial_con"].ToString(),
+                               Telefone_Celular = contato["des_telefone_celular_con"].ToString()
                            };
 
             return View(contatos.First());
@@ -73,7 +74,7 @@ namespace RAUGS.Controllers
 
                 new DsAdmin.Contato().Incluir(contato.Nome, contato.CGC, contato.CPF_CNPJ,
                     contato.Telefone_Residencial, contato.Endereco, contato.CEP, contato.Inscricao_Estadual,
-                    contato.Bairro, contato.Cidade, contato.Estado, contato.Telefone_Comercial, contato.Email, ref retorno);
+                    contato.Bairro, contato.Cidade, contato.Estado, contato.Telefone_Comercial, contato.Email, contato.Telefone_Celular,ref retorno);
 
                 return RedirectToAction("Index");
             }
@@ -104,7 +105,8 @@ namespace RAUGS.Controllers
                                Estado = contato["des_estado_con"].ToString(),
                                Inscricao_Estadual = contato["des_inscricao_estadual_con"].ToString(),
                                Telefone_Comercial = contato["des_telefone_comercial_con"].ToString(),
-                               Telefone_Residencial = contato["des_telefone_residencial_con"].ToString()
+                               Telefone_Residencial = contato["des_telefone_residencial_con"].ToString(),
+                               Telefone_Celular = contato["des_telefone_celular_con"].ToString()
                            };
 
             return View(contatos.First());
@@ -118,7 +120,7 @@ namespace RAUGS.Controllers
             {
                 new DsAdmin.Contato().Alterar(contato.Nome, contato.CGC, contato.CPF_CNPJ,
                     contato.Telefone_Residencial, contato.Endereco, contato.CEP, contato.Inscricao_Estadual,
-                    contato.Bairro, contato.Cidade, contato.Estado, contato.Telefone_Comercial, contato.Email, id);
+                    contato.Bairro, contato.Cidade, contato.Estado, contato.Telefone_Comercial, contato.Email, contato.Telefone_Celular, id);
 
                 return RedirectToAction("Index");
             }
@@ -149,7 +151,8 @@ namespace RAUGS.Controllers
                                Estado = contato["des_estado_con"].ToString(),
                                Inscricao_Estadual = contato["des_inscricao_estadual_con"].ToString(),
                                Telefone_Comercial = contato["des_telefone_comercial_con"].ToString(),
-                               Telefone_Residencial = contato["des_telefone_residencial_con"].ToString()
+                               Telefone_Residencial = contato["des_telefone_residencial_con"].ToString(),
+                               Telefone_Celular = contato["des_telefone_celular_con"].ToString()
                            };
 
             return View(contatos.First());

@@ -22,7 +22,7 @@ namespace DsAdmin
             neo = conexao;
         }
 
-        public void Incluir(String des_nome_con, String des_cgc_con, String des_cpf_cnpj_con, String des_telefone_residencial_con, String des_endereco_con, String des_cep_con, String des_inscricao_estadual_con, String des_bairro_con, String des_cidade_con, String des_estado_con, String des_telefone_comercial_con, String des_email_con, ref Int32 cod_contato_con)
+        public void Incluir(String des_nome_con, String des_cgc_con, String des_cpf_cnpj_con, String des_telefone_residencial_con, String des_endereco_con, String des_cep_con, String des_inscricao_estadual_con, String des_bairro_con, String des_cidade_con, String des_estado_con, String des_telefone_comercial_con, String des_email_con, String des_telefone_celular_con, ref Int32 cod_contato_con)
         {
             SqlCommand _Command = (SqlCommand)neo.InicializaProcedure("usp_rau_IncluirContato");
             _Command.Parameters.AddWithValue("@des_nome_con", des_nome_con == null ? Convert.DBNull : des_nome_con);
@@ -37,6 +37,7 @@ namespace DsAdmin
             _Command.Parameters.AddWithValue("@des_estado_con", des_estado_con == null ? Convert.DBNull : des_estado_con);
             _Command.Parameters.AddWithValue("@des_telefone_comercial_con", des_telefone_comercial_con == null ? Convert.DBNull : des_telefone_comercial_con);
             _Command.Parameters.AddWithValue("@des_email_con", des_email_con == null ? Convert.DBNull : des_email_con);
+            _Command.Parameters.AddWithValue("@des_telefone_celular_con", des_telefone_celular_con == null ? Convert.DBNull : des_telefone_celular_con);
 
             SqlParameter retorno = new SqlParameter();
             retorno = _Command.Parameters.Add("@cod_contato_con", SqlDbType.Int);
@@ -52,7 +53,7 @@ namespace DsAdmin
             }
         }
 
-        public void Alterar(String des_nome_con, String des_cgc_con, String des_cpf_cnpj_con, String des_telefone_residencial_con, String des_endereco_con, String des_cep_con, String des_inscricao_estadual_con, String des_bairro_con, String des_cidade_con, String des_estado_con, String des_telefone_comercial_con, String des_email_con, Int32 cod_contato_con)
+        public void Alterar(String des_nome_con, String des_cgc_con, String des_cpf_cnpj_con, String des_telefone_residencial_con, String des_endereco_con, String des_cep_con, String des_inscricao_estadual_con, String des_bairro_con, String des_cidade_con, String des_estado_con, String des_telefone_comercial_con, String des_email_con, String des_telefone_celular_con, Int32 cod_contato_con)
         {
             SqlCommand _Command = (SqlCommand)neo.InicializaProcedure("usp_rau_AlterarContato");
             _Command.Parameters.AddWithValue("@des_nome_con", des_nome_con == null ? Convert.DBNull : des_nome_con);
@@ -68,6 +69,7 @@ namespace DsAdmin
             _Command.Parameters.AddWithValue("@des_telefone_comercial_con", des_telefone_comercial_con == null ? Convert.DBNull : des_telefone_comercial_con);
             _Command.Parameters.AddWithValue("@des_email_con", des_email_con == null ? Convert.DBNull : des_email_con);
             _Command.Parameters.AddWithValue("@cod_contato_con", cod_contato_con == 0 ? Convert.DBNull : cod_contato_con);
+            _Command.Parameters.AddWithValue("@des_telefone_celular_con", des_telefone_celular_con == null ? Convert.DBNull : des_telefone_celular_con);
             neo.ExecutaNonQuery(_Command);
 
             if (sessaoInterna)

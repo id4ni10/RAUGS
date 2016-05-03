@@ -36,6 +36,9 @@ namespace RAUGS.Models
 
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
+
+        [Display(Name = "Telefone Celular")]
+        public string Telefone_Celular { get; set; }
     }
 
     public class ContatoViewModel
