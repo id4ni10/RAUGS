@@ -10,148 +10,148 @@ ao editar esse arquivo MSBuild. Para saber mais sobre isso, acesse http://go.mic
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Antlr3.Runtime.dll">
-      <publishTime>04/27/2016 11:33:06</publishTime>
+      <publishTime>05/03/2016 11:27:14</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>05/02/2016 13:45:30</publishTime>
+      <publishTime>05/03/2016 11:56:59</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>05/02/2016 13:45:30</publishTime>
+      <publishTime>05/03/2016 11:56:59</publishTime>
     </File>
     <File Include="bin/DsAdmin.dll">
-      <publishTime>05/02/2016 13:45:20</publishTime>
+      <publishTime>05/03/2016 11:56:51</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
-      <publishTime>04/27/2016 11:33:12</publishTime>
+      <publishTime>05/03/2016 11:27:16</publishTime>
     </File>
     <File Include="bin/EntityFramework.SqlServer.dll">
-      <publishTime>04/27/2016 11:33:12</publishTime>
+      <publishTime>05/03/2016 11:27:16</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
-      <publishTime>04/27/2016 11:33:15</publishTime>
+      <publishTime>05/03/2016 11:27:22</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
-      <publishTime>04/27/2016 11:33:16</publishTime>
+      <publishTime>05/03/2016 11:27:26</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
-      <publishTime>04/27/2016 11:33:16</publishTime>
+      <publishTime>05/03/2016 11:27:30</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.dll">
-      <publishTime>04/27/2016 11:33:16</publishTime>
+      <publishTime>05/03/2016 11:27:51</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
-      <publishTime>04/27/2016 11:33:16</publishTime>
+      <publishTime>05/03/2016 11:27:53</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
-      <publishTime>04/27/2016 11:33:17</publishTime>
+      <publishTime>05/03/2016 11:28:01</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.dll">
-      <publishTime>04/27/2016 11:33:16</publishTime>
+      <publishTime>05/03/2016 11:27:59</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.Facebook.dll">
-      <publishTime>04/27/2016 11:33:17</publishTime>
+      <publishTime>05/03/2016 11:28:03</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.Google.dll">
-      <publishTime>04/27/2016 11:33:17</publishTime>
+      <publishTime>05/03/2016 11:28:07</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.MicrosoftAccount.dll">
-      <publishTime>04/27/2016 11:33:18</publishTime>
+      <publishTime>05/03/2016 11:28:11</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
-      <publishTime>04/27/2016 11:33:17</publishTime>
+      <publishTime>05/03/2016 11:28:15</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Security.Twitter.dll">
-      <publishTime>04/27/2016 11:33:17</publishTime>
+      <publishTime>05/03/2016 11:28:19</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
-      <publishTime>04/27/2016 11:33:05</publishTime>
+      <publishTime>05/03/2016 11:28:21</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>04/27/2016 11:33:10</publishTime>
+      <publishTime>05/03/2016 11:28:22</publishTime>
     </File>
     <File Include="bin/Owin.dll">
-      <publishTime>04/27/2016 11:33:16</publishTime>
+      <publishTime>05/03/2016 11:28:22</publishTime>
     </File>
     <File Include="bin/pt-br/Microsoft.AspNet.Identity.Core.resources.dll">
-      <publishTime>04/27/2016 11:33:18</publishTime>
+      <publishTime>05/03/2016 11:27:24</publishTime>
     </File>
     <File Include="bin/pt-br/Microsoft.AspNet.Identity.EntityFramework.resources.dll">
-      <publishTime>04/27/2016 11:33:18</publishTime>
+      <publishTime>05/03/2016 11:27:28</publishTime>
     </File>
     <File Include="bin/pt-br/Microsoft.AspNet.Identity.Owin.resources.dll">
-      <publishTime>04/27/2016 11:33:18</publishTime>
+      <publishTime>05/03/2016 11:27:32</publishTime>
     </File>
     <File Include="bin/pt-br/Microsoft.Owin.Host.SystemWeb.resources.dll">
-      <publishTime>04/27/2016 11:33:19</publishTime>
+      <publishTime>05/03/2016 11:27:55</publishTime>
     </File>
     <File Include="bin/pt-br/Microsoft.Owin.resources.dll">
-      <publishTime>04/27/2016 11:33:19</publishTime>
+      <publishTime>05/03/2016 11:27:58</publishTime>
     </File>
     <File Include="bin/pt-br/Microsoft.Owin.Security.Facebook.resources.dll">
-      <publishTime>04/27/2016 11:33:19</publishTime>
+      <publishTime>05/03/2016 11:28:05</publishTime>
     </File>
     <File Include="bin/pt-br/Microsoft.Owin.Security.Google.resources.dll">
-      <publishTime>04/27/2016 11:33:20</publishTime>
+      <publishTime>05/03/2016 11:28:09</publishTime>
     </File>
     <File Include="bin/pt-br/Microsoft.Owin.Security.MicrosoftAccount.resources.dll">
-      <publishTime>04/27/2016 11:33:20</publishTime>
+      <publishTime>05/03/2016 11:28:13</publishTime>
     </File>
     <File Include="bin/pt-br/Microsoft.Owin.Security.resources.dll">
-      <publishTime>04/27/2016 11:33:19</publishTime>
+      <publishTime>05/03/2016 11:28:17</publishTime>
     </File>
     <File Include="bin/pt-br/Microsoft.Owin.Security.Twitter.resources.dll">
-      <publishTime>04/27/2016 11:33:20</publishTime>
+      <publishTime>05/03/2016 11:28:20</publishTime>
     </File>
     <File Include="bin/pt-br/System.Web.Helpers.resources.dll">
-      <publishTime>04/27/2016 11:33:08</publishTime>
+      <publishTime>05/03/2016 11:27:47</publishTime>
     </File>
     <File Include="bin/pt-br/System.Web.Mvc.resources.dll">
-      <publishTime>04/27/2016 11:33:08</publishTime>
+      <publishTime>05/03/2016 11:27:36</publishTime>
     </File>
     <File Include="bin/pt-br/System.Web.Optimization.resources.dll">
-      <publishTime>04/27/2016 11:33:09</publishTime>
+      <publishTime>05/03/2016 11:27:43</publishTime>
     </File>
     <File Include="bin/pt-br/System.Web.Razor.resources.dll">
-      <publishTime>04/27/2016 11:33:07</publishTime>
+      <publishTime>05/03/2016 11:27:40</publishTime>
     </File>
     <File Include="bin/pt-br/System.Web.WebPages.Deployment.resources.dll">
-      <publishTime>04/27/2016 11:33:08</publishTime>
+      <publishTime>05/03/2016 11:27:47</publishTime>
     </File>
     <File Include="bin/pt-br/System.Web.WebPages.Razor.resources.dll">
-      <publishTime>04/27/2016 11:33:08</publishTime>
+      <publishTime>05/03/2016 11:27:47</publishTime>
     </File>
     <File Include="bin/pt-br/System.Web.WebPages.resources.dll">
-      <publishTime>04/27/2016 11:33:08</publishTime>
+      <publishTime>05/03/2016 11:27:47</publishTime>
     </File>
     <File Include="bin/RAUGS.dll">
-      <publishTime>05/02/2016 13:45:21</publishTime>
+      <publishTime>05/03/2016 11:56:51</publishTime>
     </File>
     <File Include="bin/StackifyHttpTracer.dll">
       <publishTime>04/01/2016 18:30:39</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
-      <publishTime>04/27/2016 11:33:04</publishTime>
+      <publishTime>05/03/2016 11:27:45</publishTime>
     </File>
     <File Include="bin/System.Web.Mvc.dll">
-      <publishTime>04/27/2016 11:33:05</publishTime>
+      <publishTime>05/03/2016 11:27:34</publishTime>
     </File>
     <File Include="bin/System.Web.Optimization.dll">
-      <publishTime>04/27/2016 11:33:04</publishTime>
+      <publishTime>05/03/2016 11:27:41</publishTime>
     </File>
     <File Include="bin/System.Web.Razor.dll">
-      <publishTime>04/27/2016 11:33:03</publishTime>
+      <publishTime>05/03/2016 11:27:39</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Deployment.dll">
-      <publishTime>04/27/2016 11:33:04</publishTime>
+      <publishTime>05/03/2016 11:27:45</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.dll">
-      <publishTime>04/27/2016 11:33:04</publishTime>
+      <publishTime>05/03/2016 11:27:45</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Razor.dll">
-      <publishTime>04/27/2016 11:33:04</publishTime>
+      <publishTime>05/03/2016 11:27:45</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
-      <publishTime>04/27/2016 11:33:06</publishTime>
+      <publishTime>05/03/2016 11:28:22</publishTime>
     </File>
     <File Include="Content/bootstrap.css">
       <publishTime>04/27/2016 11:32:55</publishTime>
@@ -181,7 +181,7 @@ ao editar esse arquivo MSBuild. Para saber mais sobre isso, acesse http://go.mic
       <publishTime>04/27/2016 11:33:20</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>05/02/2016 13:45:24</publishTime>
+      <publishTime>05/03/2016 11:56:53</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>04/27/2016 11:32:55</publishTime>
@@ -259,16 +259,16 @@ ao editar esse arquivo MSBuild. Para saber mais sobre isso, acesse http://go.mic
       <publishTime>04/27/2016 11:33:11</publishTime>
     </File>
     <File Include="Views/Contato/Create.cshtml">
-      <publishTime>05/02/2016 13:07:36</publishTime>
+      <publishTime>05/03/2016 11:25:23</publishTime>
     </File>
     <File Include="Views/Contato/Delete.cshtml">
-      <publishTime>05/02/2016 13:08:04</publishTime>
+      <publishTime>05/03/2016 11:26:47</publishTime>
     </File>
     <File Include="Views/Contato/Details.cshtml">
-      <publishTime>05/02/2016 13:07:23</publishTime>
+      <publishTime>05/03/2016 11:26:51</publishTime>
     </File>
     <File Include="Views/Contato/Edit.cshtml">
-      <publishTime>05/02/2016 13:07:07</publishTime>
+      <publishTime>05/03/2016 11:25:51</publishTime>
     </File>
     <File Include="Views/Contato/Index.cshtml">
       <publishTime>05/02/2016 13:05:48</publishTime>
@@ -319,7 +319,7 @@ ao editar esse arquivo MSBuild. Para saber mais sobre isso, acesse http://go.mic
       <publishTime>04/27/2016 11:32:49</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/02/2016 13:45:23</publishTime>
+      <publishTime>05/03/2016 11:56:52</publishTime>
     </File>
   </ItemGroup>
 </Project>
