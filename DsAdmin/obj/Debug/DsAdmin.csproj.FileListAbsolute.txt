@@ -1,5 +1,5 @@
-E:\Projeto\RAUGS\DsAdmin\obj\Debug\DsAdmin.csprojResolveAssemblyReference.cache
-E:\Projeto\RAUGS\DsAdmin\bin\Debug\DsAdmin.dll
-E:\Projeto\RAUGS\DsAdmin\bin\Debug\DsAdmin.pdb
-E:\Projeto\RAUGS\DsAdmin\obj\Debug\DsAdmin.dll
-E:\Projeto\RAUGS\DsAdmin\obj\Debug\DsAdmin.pdb
+C:\Users\id4ni10\Documents\GitHub\RAUGS\DsAdmin\bin\Debug\DsAdmin.dll
+C:\Users\id4ni10\Documents\GitHub\RAUGS\DsAdmin\bin\Debug\DsAdmin.pdb
+C:\Users\id4ni10\Documents\GitHub\RAUGS\DsAdmin\obj\Debug\DsAdmin.csprojResolveAssemblyReference.cache
+C:\Users\id4ni10\Documents\GitHub\RAUGS\DsAdmin\obj\Debug\DsAdmin.dll
+C:\Users\id4ni10\Documents\GitHub\RAUGS\DsAdmin\obj\Debug\DsAdmin.pdb
