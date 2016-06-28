@@ -1,2 +1,7 @@
 *.dll
 *.pdb
+/DsAdmin/obj/Debug
+/.vs
+/packages
+/RAUGS/bin
+/RAUGS/obj/Debug
