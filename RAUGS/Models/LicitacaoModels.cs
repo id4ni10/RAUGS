@@ -7,36 +7,42 @@ namespace RAUGS.Models
     {
         [Required]
         [Display(Name = "cod_licitacao_lic")]
-        public Int32 cod_licitacao_lic { get; set; }
+        public Int32 Id { get; set; }
 
         [Required]
-        [Display(Name = "dat_licitacao_lic")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Display(Name = "Data Licitação")]
         public String dat_licitacao_lic { get; set; }
 
         [Required]
-        [Display(Name = "cod_cliente_cli")]
+        [Display(Name = "Cliente")]
         public Int32 cod_cliente_cli { get; set; }
 
         [Required]
-        [Display(Name = "cod_tipo_licitacao_tli")]
+        [Display(Name = "Tipo Licitação")]
         public Int32 cod_tipo_licitacao_tli { get; set; }
 
         [Required]
-        [Display(Name = "dat_inicio_contrato_lic")]
+        [DataType(DataType.Date)]
+        [Display(Name = "Início Contrato")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public String dat_inicio_contrato_lic { get; set; }
 
-        [Display(Name = "dat_fim_contrato_lic")]
+        [Display(Name = "Fim Contrato")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public String dat_fim_contrato_lic { get; set; }
 
-        [Display(Name = "num_mes_lic")]
+        [Display(Name = "Mês")]
         public Int32 num_mes_lic { get; set; }
 
         [Required]
-        [Display(Name = "num_valor_lic")]
+        [Display(Name = "Valor")]
         public Decimal num_valor_lic { get; set; }
 
         [Required]
-        [Display(Name = "tip_status_lic")]
+        [Display(Name = "Ativo")]
         public Boolean tip_status_lic { get; set; }
     }
 }

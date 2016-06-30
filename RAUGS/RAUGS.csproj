@@ -240,6 +240,10 @@
     <Content Include="Views\Contato\Details.cshtml" />
     <Content Include="Views\Contato\Edit.cshtml" />
     <Content Include="Views\Contato\Delete.cshtml" />
+    <Content Include="Views\Licitacao\Index.cshtml" />
+    <Content Include="Views\Licitacao\Create.cshtml" />
+    <Content Include="Views\Licitacao\Edit.cshtml" />
+    <Content Include="Views\Licitacao\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
