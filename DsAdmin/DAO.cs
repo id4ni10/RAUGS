@@ -7,7 +7,7 @@ namespace DsAdmin
 {
     public class DAO
     {
-        private SqlConnection conn = new SqlConnection("Application Name=RAUGS;Data Source=;Initial Catalog=RAUGS;User ID=danilo;Password='danilo123*';");
+        private SqlConnection conn = new SqlConnection("Application Name=RAUGS;Data Source=201.157.204.13;Initial Catalog=RAUGS;User ID=danilo;Password='danilo123*';Connection Timeout=60;");
 
         private SqlTransaction transaction;
 
@@ -31,6 +31,7 @@ namespace DsAdmin
         {
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter((SqlCommand)comando);
+            da.SelectCommand.CommandTimeout = 60;
             da.Fill(ds);
             ds.Tables[0].TableName = tabela;
             return ds;

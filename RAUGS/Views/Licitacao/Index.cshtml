@@ -1,4 +1,4 @@
-﻿@model IEnumerable<RAUGS.Models.Licitacao>
+﻿@model IEnumerable<RAUGS.Models.LicitacaoView>
 
 @{
     ViewBag.Title = "Index";
@@ -15,19 +15,7 @@
             @Html.DisplayNameFor(model => model.dat_licitacao_lic)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.cod_cliente_cli)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cod_tipo_licitacao_tli)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.dat_inicio_contrato_lic)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.dat_fim_contrato_lic)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.num_mes_lic)
+            @Html.DisplayNameFor(model => model.des_cliente_cli)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.num_valor_lic)
@@ -45,19 +33,7 @@
                 @Html.DisplayFor(modelItem => item.dat_licitacao_lic)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.cod_cliente_cli)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.cod_tipo_licitacao_tli)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.dat_inicio_contrato_lic)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.dat_fim_contrato_lic)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.num_mes_lic)
+                @Html.DisplayFor(modelItem => item.des_cliente_cli)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.num_valor_lic)
