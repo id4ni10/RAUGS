@@ -7,7 +7,7 @@ namespace DsAdmin
 {
     public class DAO
     {
-        private SqlConnection conn = new SqlConnection("Application Name=RAUGS;Data Source=;Initial Catalog=RAUGS;User ID=danilo;Password='danilo123*';");
+        private SqlConnection conn = new SqlConnection();
 
         private SqlTransaction transaction;
 
