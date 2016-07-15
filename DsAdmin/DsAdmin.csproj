@@ -39,9 +39,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aditivo.cs" />
+    <Compile Include="Cliente.cs" />
     <Compile Include="Contato.cs" />
     <Compile Include="DAO.cs" />
     <Compile Include="Factory.cs" />
+    <Compile Include="Licitacao.cs" />
+    <Compile Include="Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

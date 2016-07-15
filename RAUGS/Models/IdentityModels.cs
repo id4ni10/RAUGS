@@ -21,7 +21,7 @@ namespace RAUGS.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("Application Name=RAUGS;Data Source=mabs325.cswijwnr0umy.us-west-2.rds.amazonaws.com;Initial Catalog=RAUGS;User ID=mabs;Password='k4d1l4k!';", throwIfV1Schema: false)
+            : base("Application Name=RAUGS;Data Source=201.157.204.13;Initial Catalog=RAUGS;User ID=danilo;Password='danilo123*';", throwIfV1Schema: false)
         {
         }
 

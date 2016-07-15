@@ -1,0 +1,76 @@
+﻿@model IEnumerable<RAUGS.Models.Licitacao>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.dat_licitacao_lic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cod_cliente_cli)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cod_tipo_licitacao_tli)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dat_inicio_contrato_lic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dat_fim_contrato_lic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.num_mes_lic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.num_valor_lic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tip_status_lic)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.dat_licitacao_lic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cod_cliente_cli)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cod_tipo_licitacao_tli)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dat_inicio_contrato_lic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dat_fim_contrato_lic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.num_mes_lic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.num_valor_lic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tip_status_lic)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

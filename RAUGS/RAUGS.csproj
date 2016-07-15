@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,10 +41,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="StackifyHttpTracer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=23bb7f512c6bf076, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\id4ni10\Desktop\StackifyHttpTracer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -165,14 +162,19 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ContatoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LicitacaoController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AditivoModels.cs" />
+    <Compile Include="Models\ClienteModels.cs" />
     <Compile Include="Models\ContatoModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LicitacaoModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ProdutoModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -238,6 +240,10 @@
     <Content Include="Views\Contato\Details.cshtml" />
     <Content Include="Views\Contato\Edit.cshtml" />
     <Content Include="Views\Contato\Delete.cshtml" />
+    <Content Include="Views\Licitacao\Index.cshtml" />
+    <Content Include="Views\Licitacao\Create.cshtml" />
+    <Content Include="Views\Licitacao\Edit.cshtml" />
+    <Content Include="Views\Licitacao\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
