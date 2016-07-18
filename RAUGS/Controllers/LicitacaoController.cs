@@ -15,13 +15,12 @@ namespace RAUGS.Controllers
                     new DsAdmin.Licitacao().Listar().Table.AsEnumerable()
                  select new Models.Licitacao
                  {
-                     Id = Convert.ToInt32(item["cod_licitacao_lic"]),
-                     dat_licitacao_lic = item["dat_licitacao_lic"].ToString(),
-                     cod_cliente_cli = Convert.ToInt32(item["cod_cliente_cli"]),
-                     cod_tipo_licitacao_tli = Convert.ToInt32(item["cod_tipo_licitacao_tli"]),
-                     dat_inicio_contrato_lic = item["dat_inicio_contrato_lic"].ToString(),
-                     num_valor_lic = Convert.ToDecimal(item["num_valor_lic"]),
-                     tip_status_lic = (bool)item["tip_status_lic"]
+                     Id = item["cod_licitacao_lic"].ToInt32(),
+                     dat_licitacao_lic = item["dat_licitacao_lic"].ToDateTime(),
+                     cod_cliente_cli = item["cod_cliente_cli"].ToInt32(),
+                     cod_tipo_licitacao_tli = item["cod_tipo_licitacao_tli"].ToInt32(),
+                     num_valor_lic = item["num_valor_lic"].ToDecimal(),
+                     tip_status_lic = item["tip_status_lic"].ToBoolean()
                  }).ToList();
 
             return View(data);
@@ -29,6 +28,7 @@ namespace RAUGS.Controllers
 
         public ActionResult Create()
         {
+            DropDownListNumero();
             DropDownListCliente();
             return View();
         }
@@ -40,7 +40,9 @@ namespace RAUGS.Controllers
             {
                 var retorno = 0;
 
-                new DsAdmin.Licitacao().Incluir(licitacao.dat_licitacao_lic, licitacao.cod_cliente_cli, licitacao.cod_tipo_licitacao_tli, licitacao.dat_inicio_contrato_lic, licitacao.dat_fim_contrato_lic, licitacao.num_mes_lic, licitacao.num_valor_lic, licitacao.tip_status_lic, ref retorno);
+                new DsAdmin.Licitacao().Incluir(licitacao.dat_licitacao_lic, licitacao.cod_cliente_cli,
+                    licitacao.cod_tipo_licitacao_tli, licitacao.num_mes_lic, licitacao.num_valor_lic,
+                    licitacao.tip_status_lic, licitacao.cod_numero_num, ref retorno);
 
                 return RedirectToAction("Index");
             }
@@ -59,10 +61,9 @@ namespace RAUGS.Controllers
                     new Models.Licitacao
                     {
                         Id = Convert.ToInt32(item["cod_licitacao_lic"]),
-                        dat_licitacao_lic = item["dat_licitacao_lic"].ToString(),
+                        dat_licitacao_lic = item["dat_licitacao_lic"].ToDateTime(),
                         cod_cliente_cli = Convert.ToInt32(item["cod_cliente_cli"]),
                         cod_tipo_licitacao_tli = Convert.ToInt32(item["cod_tipo_licitacao_tli"]),
-                        dat_inicio_contrato_lic = item["dat_inicio_contrato_lic"].ToString(),
                         num_valor_lic = Convert.ToDecimal(item["num_valor_lic"]),
                         tip_status_lic = (bool)item["tip_status_lic"]
                     }).First());
@@ -70,6 +71,7 @@ namespace RAUGS.Controllers
 
         public ActionResult Edit(int Id)
         {
+            DropDownListNumero();
             DropDownListCliente();
 
             return View(
@@ -79,11 +81,9 @@ namespace RAUGS.Controllers
                     new Models.Licitacao
                     {
                         Id = Convert.ToInt32(item["cod_licitacao_lic"]),
-                        dat_licitacao_lic = item["dat_licitacao_lic"].ToString(),
+                        dat_licitacao_lic = item["dat_licitacao_lic"].ToDateTime(),
                         cod_cliente_cli = Convert.ToInt32(item["cod_cliente_cli"]),
                         cod_tipo_licitacao_tli = Convert.ToInt32(item["cod_tipo_licitacao_tli"]),
-                        dat_inicio_contrato_lic = item["dat_inicio_contrato_lic"].ToString(),
-                        dat_fim_contrato_lic = item["dat_fim_contrato_lic"].ToString(),
                         num_mes_lic = Convert.ToInt32(item["num_mes_lic"]),
                         num_valor_lic = Convert.ToDecimal(item["num_valor_lic"]),
                         tip_status_lic = (bool)item["tip_status_lic"]
@@ -95,11 +95,14 @@ namespace RAUGS.Controllers
         {
             try
             {
-                new DsAdmin.Licitacao().Alterar(licitacao.dat_licitacao_lic, licitacao.cod_cliente_cli, licitacao.cod_tipo_licitacao_tli, licitacao.dat_inicio_contrato_lic, licitacao.dat_fim_contrato_lic, licitacao.num_mes_lic, licitacao.num_valor_lic, licitacao.tip_status_lic, licitacao.Id);
+                new DsAdmin.Licitacao().Alterar(licitacao.dat_licitacao_lic,
+                    licitacao.cod_cliente_cli, licitacao.cod_tipo_licitacao_tli,
+                    licitacao.num_mes_lic, licitacao.num_valor_lic, licitacao.tip_status_lic,
+                    licitacao.cod_numero_num, licitacao.Id);
 
                 return RedirectToAction("Index");
             }
-            catch
+            catch(Exception ex)
             {
                 return View("Error");
             }
@@ -114,10 +117,9 @@ namespace RAUGS.Controllers
                     new Models.Licitacao
                     {
                         Id = Convert.ToInt32(item["cod_licitacao_lic"]),
-                        dat_licitacao_lic = item["dat_licitacao_lic"].ToString(),
+                        dat_licitacao_lic = item["dat_licitacao_lic"].ToDateTime(),
                         cod_cliente_cli = Convert.ToInt32(item["cod_cliente_cli"]),
                         cod_tipo_licitacao_tli = Convert.ToInt32(item["cod_tipo_licitacao_tli"]),
-                        dat_inicio_contrato_lic = item["dat_inicio_contrato_lic"].ToString(),
                         num_valor_lic = Convert.ToDecimal(item["num_valor_lic"]),
                         tip_status_lic = (bool)item["tip_status_lic"]
                     }).First());
@@ -152,6 +154,22 @@ namespace RAUGS.Controllers
             data.Insert(0, new SelectListItem { Text = "Selecione", Value = "" });
 
             ViewBag.Clientes = data;
+        }
+
+        public void DropDownListNumero()
+        {
+            var data =
+                (from item in
+                    new DsAdmin.Numero().Listar().Table.AsEnumerable()
+                 select new SelectListItem
+                 {
+                     Text = item["des_numero_num"].ToString(),
+                     Value = item["cod_numero_num"].ToString()
+                 }).ToList();
+
+            data.Insert(0, new SelectListItem { Text = "Selecione", Value = "" });
+
+            ViewBag.Numeros = data;
         }
     }
 }

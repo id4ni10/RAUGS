@@ -1,15 +1,7 @@
 *.dll
 *.pdb
-<<<<<<< HEAD
-=======
-/DsAdmin/bin/
-/DsAdmin/bin/Debug/
-/DsAdmin/obj/
 /DsAdmin/obj/Debug
 /.vs
 /packages
 /RAUGS/bin
 /RAUGS/obj/Debug
->>>>>>> origin/master
-DsAdmin/DAO.cs
-RAUGS/Models/IdentityModels.cs

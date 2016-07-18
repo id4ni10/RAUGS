@@ -11,9 +11,9 @@ namespace RAUGS.Models
 
         [Required]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Data Licitação")]
-        public String dat_licitacao_lic { get; set; }
+        public DateTime dat_licitacao_lic { get; set; }
 
         [Required]
         [Display(Name = "Cliente")]
@@ -24,15 +24,8 @@ namespace RAUGS.Models
         public Int32 cod_tipo_licitacao_tli { get; set; }
 
         [Required]
-        [DataType(DataType.Date)]
-        [Display(Name = "Início Contrato")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public String dat_inicio_contrato_lic { get; set; }
-
-        [Display(Name = "Fim Contrato")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public String dat_fim_contrato_lic { get; set; }
+        [Display(Name = "Número")]
+        public Int32 cod_numero_num { get; set; }
 
         [Display(Name = "Mês")]
         public Int32 num_mes_lic { get; set; }
