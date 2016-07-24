@@ -96,7 +96,7 @@ namespace DsAdmin
             return lRetorno.Tables["tb_rau_licitacao"].DefaultView;
         }
 
-        public DataView ListarPorFiltro(DateTime? dat_licitacao_lic, Int32 cod_cliente_cli, Int32 cod_tipo_licitacao_tli, Int32 num_mes_lic, Decimal num_valor_lic, Boolean? tip_status_lic, Int32 cod_licitacao_lic)
+        public DataView ListarPorFiltro(DateTime? dat_licitacao_lic, Int32 cod_cliente_cli, Int32 num_mes_lic, Int32 cod_tipo_licitacao_tli, Int32 cod_numero_num)
         {
             DataSet lRetorno;
             SqlCommand _Command = (SqlCommand)neo.InicializaProcedure("usp_rau_ListarLicitacaoPorFiltro");
@@ -104,9 +104,8 @@ namespace DsAdmin
             _Command.Parameters.AddWithValue("@cod_cliente_cli", cod_cliente_cli == 0 ? Convert.DBNull : cod_cliente_cli);
             _Command.Parameters.AddWithValue("@cod_tipo_licitacao_tli", cod_tipo_licitacao_tli == 0 ? Convert.DBNull : cod_tipo_licitacao_tli);
             _Command.Parameters.AddWithValue("@num_mes_lic", num_mes_lic == 0 ? Convert.DBNull : num_mes_lic);
-            _Command.Parameters.AddWithValue("@num_valor_lic", num_valor_lic == 0 ? Convert.DBNull : num_valor_lic);
-            _Command.Parameters.AddWithValue("@tip_status_lic", !tip_status_lic.HasValue ? Convert.DBNull : tip_status_lic);
-            _Command.Parameters.AddWithValue("@cod_licitacao_lic", cod_licitacao_lic == 0 ? Convert.DBNull : cod_licitacao_lic);
+            _Command.Parameters.AddWithValue("@cod_numero_num", cod_numero_num == 0 ? Convert.DBNull : cod_numero_num);
+            
             lRetorno = neo.ConsultaQueryDataSet(_Command, "tb_rau_licitacao");
 
             if (sessaoInterna)

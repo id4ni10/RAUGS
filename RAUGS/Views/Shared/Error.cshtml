@@ -1,4 +1,4 @@
-﻿@model System.Web.Mvc.HandleErrorInfo
+﻿@model System.Exception
 
 @{
     ViewBag.Title = "Erro";
@@ -8,9 +8,7 @@
 <h2 class="text-danger">Ocorreu um erro ao processar a solicitação.</h2>
 
 <p>
-    Controller: <b>@Model.ControllerName</b><br />
-    Action: <b>@Model.ActionName</b><br />
-    Exception: <b>@Model.Exception.GetType().FullName</b><br />
-    Message: <b>@Model.Exception.Message</b><br />
-    StackTrace: <b>@Model.Exception.StackTrace</b><br />
+    Exception: <b>@Model.GetType().FullName</b><br />
+    Message: <b>@Model.Message</b><br />
+    StackTrace: <b>@Model.StackTrace</b><br />
 </p>

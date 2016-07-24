@@ -22,20 +22,21 @@ namespace DsAdmin
             neo = conexao;
         }
 
-        public void Incluir(DateTime? dat_inicio_ctr, DateTime? dat_fim_ctr, Decimal num_valor_ctr, Int32 cod_tipo_contrato_tcr, ref Int32 cod_contrato_ctr)
+        public void Incluir(DateTime? dat_inicio_ctr, DateTime? dat_fim_ctr, Decimal num_valor_ctr, Int32 cod_tipo_contrato_tcr, Int32 cod_licitacao_lic, ref Int32 cod_contrato_ctr)
         {
             SqlCommand _Command = (SqlCommand)neo.InicializaProcedure("usp_rau_IncluirContrato");
             _Command.Parameters.AddWithValue("@dat_inicio_ctr", !dat_inicio_ctr.HasValue ? Convert.DBNull : dat_inicio_ctr);
             _Command.Parameters.AddWithValue("@dat_fim_ctr", !dat_fim_ctr.HasValue ? Convert.DBNull : dat_fim_ctr);
             _Command.Parameters.AddWithValue("@num_valor_ctr", num_valor_ctr == 0 ? Convert.DBNull : num_valor_ctr);
             _Command.Parameters.AddWithValue("@cod_tipo_contrato_tcr", cod_tipo_contrato_tcr == 0 ? Convert.DBNull : cod_tipo_contrato_tcr);
+            _Command.Parameters.AddWithValue("@cod_licitacao_lic", cod_licitacao_lic == 0 ? Convert.DBNull : cod_licitacao_lic);
 
             SqlParameter retorno = new SqlParameter();
             retorno = _Command.Parameters.Add("@cod_contrato_ctr", SqlDbType.Int);
             retorno.Direction = ParameterDirection.Output;
 
             neo.ExecutaNonQuery(_Command);
-            cod_contrato_ctr = (Int32)_Command.Parameters["cod_contrato_ctr"].Value;
+            cod_contrato_ctr = (Int32)_Command.Parameters["@cod_contrato_ctr"].Value;
 
             if (sessaoInterna)
             {
@@ -80,6 +81,21 @@ namespace DsAdmin
         {
             DataSet lRetorno;
             SqlCommand _Command = (SqlCommand)neo.InicializaProcedure("usp_rau_ListarContrato");
+            lRetorno = neo.ConsultaQueryDataSet(_Command, "tb_rau_contrato");
+
+            if (sessaoInterna)
+            {
+                neo.Fechar();
+            }
+
+            return lRetorno.Tables["tb_rau_contrato"].DefaultView;
+        }
+
+        public DataView ListarPorLicitacao(Int32 cod_licitacao_lic)
+        {
+            DataSet lRetorno;
+            SqlCommand _Command = (SqlCommand)neo.InicializaProcedure("usp_rau_ListarContratoPorLicitacao");
+            _Command.Parameters.AddWithValue("@cod_licitacao_lic", cod_licitacao_lic == 0 ? Convert.DBNull : cod_licitacao_lic);
             lRetorno = neo.ConsultaQueryDataSet(_Command, "tb_rau_contrato");
 
             if (sessaoInterna)

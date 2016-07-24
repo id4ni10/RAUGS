@@ -1,0 +1,52 @@
+﻿@model RAUGS.Models.ContratoPublicacao
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", "Contrato", new { id = Model.cod_licitacao_lic }, null)
+    @{ var first = Model.Contratos.FirstOrDefault(); }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => first.dat_inicio_ctr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => first.dat_fim_ctr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => first.num_valor_ctr)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => first.des_tipo_contrato_tcr)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Contratos)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.dat_inicio_ctr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dat_fim_ctr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.num_valor_ctr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.des_tipo_contrato_tcr)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "Contrato", new { id = item.Id }, null) |
+                @Html.ActionLink("Delete", "Delete", "Contrato", new { id = item.Id }, null)
+            </td>
+        </tr>
+    }
+
+</table>

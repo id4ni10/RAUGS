@@ -2,28 +2,71 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>DASHBOARD</h1>
-    <p class="lead">RAUGS</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div class="container">
+    <hr />
+    <div class="row">
+        <div class="col-md-8">
+            <div id="chart_div" style="width: 700px; height: 350px;"></div>
+        </div>
+
+        <div class="col-md-4">
+            <h1>Business Name or Tagline</h1>
+            <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
+            <a class="btn btn-primary btn-lg" href="#">Call to Action!</a>
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="well text-center">
+                This is a well that is a great spot for a business tagline or phone number for easy access!
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Heading 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
+            <a class="btn btn-default" href="#">More Info</a>
+        </div>
+
+        <div class="col-md-4">
+            <h2>Heading 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
+            <a class="btn btn-default" href="#">More Info</a>
+        </div>
+
+        <div class="col-md-4">
+            <h2>Heading 3</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
+            <a class="btn btn-default" href="#">More Info</a>
+        </div>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Lero lero</h2>
-        <p>
-            Podemos já vislumbrar o modo pelo qual o novo modelo estrutural aqui preconizado assume importantes posições no estabelecimento do impacto na agilidade decisória.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Lero lero</h2>
-        <p>Podemos já vislumbrar o modo pelo qual o novo modelo estrutural aqui preconizado assume importantes posições no estabelecimento do impacto na agilidade decisória.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Lero lero</h2>
-        <p>Podemos já vislumbrar o modo pelo qual o novo modelo estrutural aqui preconizado assume importantes posições no estabelecimento do impacto na agilidade decisória.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Vitórias', 'Derrotas', 'Outros'],
+          ['2013', 1000, 400, 450],
+          ['2014', 1170, 460, 325],
+          ['2015', 660, 1120, 678],
+          ['2016', 1030, 540, 1122]
+        ]);
+
+        var options = {
+            title: 'Company Performance',
+            hAxis: { title: 'Year', titleTextStyle: { color: '#333' } },
+            vAxis: { minValue: 0 }
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+</script>

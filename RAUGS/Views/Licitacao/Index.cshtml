@@ -1,8 +1,10 @@
-﻿@model IEnumerable<RAUGS.Models.Licitacao>
+﻿@model IEnumerable<RAUGS.Models.LicitacaoView>
 @{
     ViewBag.Title = "Index";
 }
-<h2>Index</h2>
+
+@Html.Partial("LicitacaoSearch", new RAUGS.Models.LicitacaoSearch{ })
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -12,13 +14,13 @@
             @Html.DisplayNameFor(model => model.dat_licitacao_lic)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.cod_cliente_cli)
+            @Html.DisplayNameFor(model => model.des_cliente_cli)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.cod_tipo_licitacao_tli)
+            @Html.DisplayNameFor(model => model.des_tipo_licitacao_tli)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.num_mes_lic)
+            @Html.DisplayNameFor(model => model.des_numero_num)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.num_valor_lic)
@@ -35,13 +37,13 @@
                 @Html.DisplayName(item.dat_licitacao_lic.ToString("dd/MM/yyyy"))
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.cod_cliente_cli)
+                @Html.DisplayFor(modelItem => item.des_cliente_cli)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.cod_tipo_licitacao_tli)
+                @Html.DisplayFor(modelItem => item.des_tipo_licitacao_tli)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.num_mes_lic)
+                @Html.DisplayFor(modelItem => item.des_numero_num)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.num_valor_lic)
@@ -50,7 +52,7 @@
                 @Html.DisplayFor(modelItem => item.tip_status_lic)
             </td>
             <td>
-                @Html.ActionLink("Contratos", "Index", "Contrato", new { id = item.Id }, null) |
+                @Html.ActionLink("Contratos", "Contratos", new { id = item.Id }) |
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
                 @Html.ActionLink("Details", "Details", new { id = item.Id }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.Id })

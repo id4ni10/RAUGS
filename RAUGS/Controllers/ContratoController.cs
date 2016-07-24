@@ -6,44 +6,31 @@ using System.Web.Mvc;
 
 namespace RAUGS.Controllers
 {
+    [Authorize]
     public class ContratoController : Controller
     {
-        public ActionResult Index(Int32 Id)
-        {
-            var data =
-                (from item in
-                    new DsAdmin.Contrato().Listar().Table.AsEnumerable()
-                 select new Models.Contrato
-                 {
-                     Id = Convert.ToInt32(item["cod_contrato_ctr"]),
-                     dat_inicio_ctr = item["dat_inicio_ctr"].ToDateTime(),
-                     num_valor_ctr = Convert.ToDecimal(item["num_valor_ctr"]),
-                     cod_tipo_contrato_tcr = Convert.ToInt32(item["cod_tipo_contrato_tcr"])
-                 }).ToList();
-
-            return View(data);
-        }
-
         public ActionResult Create(Int32 Id)
         {
-            return View();
+            DropDownListTipoContrato();
+
+            return View(new Models.Contrato { cod_licitacao_lic = Id });
         }
 
         [HttpPost]
-        public ActionResult Create(Models.Contrato contrato)
+        public ActionResult Create(Int32 Id, Models.Contrato contrato)
         {
             try
             {
                 var retorno = 0;
 
-                new DsAdmin.Contrato().Incluir(contrato.dat_inicio_ctr, contrato.dat_fim_ctr, 
-                    contrato.num_valor_ctr, contrato.cod_tipo_contrato_tcr, ref retorno);
+                new DsAdmin.Contrato().Incluir(contrato.dat_inicio_ctr, contrato.dat_fim_ctr,
+                    contrato.num_valor_ctr.ToDecimal(), contrato.cod_tipo_contrato_tcr, Id, ref retorno);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { Id = Id });
             }
-            catch
+            catch (Exception ex)
             {
-                return View("Error");
+                return View("Error", ex);
             }
         }
         public ActionResult Details(int Id)
@@ -55,14 +42,17 @@ namespace RAUGS.Controllers
                     new Models.Contrato
                     {
                         Id = Convert.ToInt32(item["cod_contrato_ctr"]),
+                        cod_licitacao_lic = item["cod_licitacao_lic"].ToInt32(),
                         dat_inicio_ctr = item["dat_inicio_ctr"].ToDateTime(),
-                        num_valor_ctr = Convert.ToDecimal(item["num_valor_ctr"]),
+                        num_valor_ctr = item["num_valor_ctr"].ToString(),
                         cod_tipo_contrato_tcr = Convert.ToInt32(item["cod_tipo_contrato_tcr"])
                     }).First());
         }
 
         public ActionResult Edit(int Id)
         {
+            DropDownListTipoContrato();
+
             return View(
                 (from item in
                     new DsAdmin.Contrato().Consultar(Id).Table.AsEnumerable()
@@ -72,7 +62,8 @@ namespace RAUGS.Controllers
                         Id = Convert.ToInt32(item["cod_contrato_ctr"]),
                         dat_inicio_ctr = item["dat_inicio_ctr"].ToDateTime(),
                         dat_fim_ctr = item["dat_fim_ctr"].ToDateTime(),
-                        num_valor_ctr = Convert.ToDecimal(item["num_valor_ctr"]),
+                        cod_licitacao_lic = item["cod_licitacao_lic"].ToInt32(),
+                        num_valor_ctr = item["num_valor_ctr"].ToString(),
                         cod_tipo_contrato_tcr = Convert.ToInt32(item["cod_tipo_contrato_tcr"])
                     }).First());
         }
@@ -82,9 +73,10 @@ namespace RAUGS.Controllers
         {
             try
             {
-                new DsAdmin.Contrato().Alterar(contrato.dat_inicio_ctr, contrato.dat_fim_ctr, contrato.num_valor_ctr, contrato.cod_tipo_contrato_tcr, contrato.Id);
+                new DsAdmin.Contrato().Alterar(contrato.dat_inicio_ctr, contrato.dat_fim_ctr, 
+                    contrato.num_valor_ctr.ToDecimal(), contrato.cod_tipo_contrato_tcr, contrato.Id);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { Id = Id });
             }
             catch
             {
@@ -102,7 +94,7 @@ namespace RAUGS.Controllers
                     {
                         Id = Convert.ToInt32(item["cod_contrato_ctr"]),
                         dat_inicio_ctr = item["dat_inicio_ctr"].ToDateTime(),
-                        num_valor_ctr = Convert.ToDecimal(item["num_valor_ctr"]),
+                        num_valor_ctr = item["num_valor_ctr"].ToString(),
                         cod_tipo_contrato_tcr = Convert.ToInt32(item["cod_tipo_contrato_tcr"])
                     }).First());
         }
@@ -116,10 +108,26 @@ namespace RAUGS.Controllers
 
                 return RedirectToAction("Index");
             }
-            catch
+            catch (Exception ex)
             {
-                return View("Error");
+                return View("Error", ex);
             }
+        }
+
+        public void DropDownListTipoContrato()
+        {
+            var data =
+                (from item in
+                    new DsAdmin.TipoContrato().Listar().Table.AsEnumerable()
+                 select new SelectListItem
+                 {
+                     Text = item["des_tipo_contrato_tcr"].ToString(),
+                     Value = item["cod_tipo_contrato_tcr"].ToString()
+                 }).ToList();
+
+            data.Insert(0, new SelectListItem { Text = "Selecione", Value = "" });
+
+            ViewBag.TipoContrato = data;
         }
     }
 }

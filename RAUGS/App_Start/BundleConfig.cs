@@ -9,6 +9,9 @@ namespace RAUGS
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+                        "~/Scripts/jquery.maskedinput.js",
+                        "~/Scripts/jquery.mask.min.js",
+                        "~/Scripts/jquery.functions.js",
                         "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(

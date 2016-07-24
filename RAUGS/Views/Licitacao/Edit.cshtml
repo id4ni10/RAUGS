@@ -1,4 +1,5 @@
-﻿@model RAUGS.Models.Licitacao
+﻿@using System.Globalization;
+@model RAUGS.Models.Licitacao
 @{
     ViewBag.Title = "Edit";
 }
@@ -30,7 +31,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.cod_tipo_licitacao_tli, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.cod_tipo_licitacao_tli, new SelectList(new List<SelectListItem> { new SelectListItem { Text = "Selecione", Value = "" }, new SelectListItem { Text = "Pregão Presêncial", Value = "2" }, new SelectListItem { Text = "Pregão Eletônico", Value = "1" } }, "Value", "Text"), new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.cod_tipo_licitacao_tli, new SelectList(ViewBag.TipoLicitacao, "Value", "Text"), new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.cod_tipo_licitacao_tli, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -42,18 +43,31 @@
                 @Html.ValidationMessageFor(model => model.cod_numero_num, "", new { @class = "text-danger" })
             </div>
         </div>
-        
+
         <div class="form-group">
             @Html.LabelFor(model => model.num_mes_lic, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.num_mes_lic, new { htmlAttributes = new { @class = "form-control" } })
+                @{
+                    var idx = 1;
+                    var months = (from month in DateTimeFormatInfo.CurrentInfo.MonthNames
+                                  where !string.IsNullOrEmpty(month)
+                                  select new SelectListItem
+                                  {
+                                      Value = (idx++).ToString(),
+                                      Text = month.First().ToString().ToUpper() + month.Substring(1)
+                                  }).ToList();
+
+                    months.Insert(0, new SelectListItem { Text = "Selecione", Value = "" });
+                }
+
+                @Html.DropDownListFor(model => model.num_mes_lic, new SelectList(months, "Value", "Text"), new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.num_mes_lic, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.num_valor_lic, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.num_valor_lic, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.num_valor_lic, new { htmlAttributes = new { @class = "form-control mask_real" } })
                 @Html.ValidationMessageFor(model => model.num_valor_lic, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -72,7 +86,7 @@
             </div>
         </div>
     </div>
-}
+                    }
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
